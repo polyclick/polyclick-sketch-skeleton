@@ -1,8 +1,14 @@
 
+$fallback-bg: none;
 $fallback-font: 'Ubuntu', sans-serif;
+$fallback-text-color: #000;
+$fallback-links-color: #333;
+$fallback-boxes-bg-color: #fff;
 
 .fallback {
+  background: $fallback-bg;
   box-sizing: border-box;
+  color: $fallback-text-color;
   display: none;
   font-family: $fallback-font;
   font-size: 12px;
@@ -12,7 +18,6 @@ $fallback-font: 'Ubuntu', sans-serif;
   position: absolute;
   top: 0;
   width: 100%;
-  background: #000;
 
   *,
   *:before,
@@ -26,69 +31,75 @@ $fallback-font: 'Ubuntu', sans-serif;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, .004);
   }
 
-  .wrapper {
+  .horizon {
     display: table-cell;
     text-align: center;
     vertical-align: middle;
+  }
 
-    .content {
-      display: inline-block;
-      padding: 5%;
-      text-align: left;
-    }
+  .wrapper {
+    display: inline-block;
+    padding: 5%;
+    text-align: left;
+  }
 
-    .message {
-      background-color: #fff;
-      display: block;
-      margin-bottom: 20px;
-      padding: 20px;
+  .message {
+    background-color: $fallback-boxes-bg-color;
+    display: block;
+    margin-bottom: 20px;
+    padding: 20px;
 
-      .content {
-        .title {
-          font-size: 125%;
-          font-weight: bold;
-        }
-
-        p {
-          margin: 0;
-        }
-
-        a,
-        a:link,
-        a:visited {
-          color: #333;
-          font-weight: bold;
-        }
+    .text {
+      .title {
+        font-size: 125%;
+        font-weight: bold;
       }
 
-      &.icon {
-        svg {
-          float: left;
-          height: 40px;
-          margin-left: 5px;
-          width: 40px;
-        }
+      p {
+        font-family: $fallback-font;
+      }
 
-        .content {
-          margin-left: 65px;
-        }
+      a,
+      a:link,
+      a:visited {
+        color: $fallback-links-color;
+        font-weight: bold;
       }
     }
 
-    .video {
-      height: 0;
-      padding-bottom: 56.25%;   // 16:9
-      position: relative;
-
-      iframe,
-      object,
-      embed {
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 100%;
+    &.icon {
+      svg {
+        float: left;
+        height: 40px;
+        margin-left: 5px;
+        width: 40px;
       }
+
+      .text {
+        margin-left: 65px;
+      }
+    }
+
+    &.highlighted {
+      p {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .video {
+    height: 0;
+    padding-bottom: 56.25%;   // 16:9
+    position: relative;
+
+    iframe,
+    object,
+    embed {
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
     }
   }
 }
@@ -99,6 +110,18 @@ $fallback-font: 'Ubuntu', sans-serif;
 .fallbacking {
   body {
     overflow: visible;
+  }
+
+  .content {
+    display: none;
+  }
+
+  .info {
+    display: none;
+
+    > * {
+      display: none;
+    }
   }
 
   .fallback {

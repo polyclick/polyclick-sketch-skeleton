@@ -4,6 +4,9 @@ import THREE from 'three'
 import TweenMax from 'gsap'
 import $ from 'jquery'
 
+import {info} from './info.js'
+import {showFallback} from './fallback.js'
+
 class App {
   constructor() {
     this.camera = null
@@ -11,28 +14,24 @@ class App {
     this.renderer = null
     this.mesh = null
 
-    // quick fix for now
-    let $info = $('.info')
-    $info.find('button.trigger').click(function(event) {
-      event.preventDefault()
-      $info.toggleClass('opened')
-    })
-
-    $info.find('section.sidebar').click(function(event) {
-      $info.removeClass('opened')
-    }).find('a').click(function(event) {
-      event.stopPropagation()
-    })
-
     this.init()
   }
 
   init() {
+
+    // info trigger and sidebar
+    info()
+
+    // show fallback if tech not supported
+    if (true) {
+      showFallback()
+    }
+
     // renderer
     this.renderer = new THREE.WebGLRenderer({ antialias: true })
     this.renderer.setPixelRatio(window.devicePixelRatio)
     this.renderer.setSize(window.innerWidth, window.innerHeight)
-    document.body.appendChild(this.renderer.domElement)
+    $('.content').append(this.renderer.domElement)
 
     // camera
     this.camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 1, 1000)
