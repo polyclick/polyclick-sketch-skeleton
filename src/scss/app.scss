@@ -1,0 +1,15 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,500);
+
+@import 'info';
+@import 'fallback';
+
+body {
+  background-color: #fff;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+
+// fallback, unsupported
+// dark, light modus

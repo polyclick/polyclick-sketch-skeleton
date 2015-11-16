@@ -1,0 +1,165 @@
+
+$trigger-position: bottom;
+$trigger-icon-color: #fff;
+$sidebar-font: 'Ubuntu', sans-serif;
+$sidebar-bg-color: rgba(20, 20, 20, .95);
+$sidebar-text-color: #fff;
+$sidebar-links-color: #fff;
+
+// example config for dark mode:
+//
+// $trigger-position: bottom;
+// $trigger-icon-color: #fff;
+// $sidebar-font: 'Ubuntu', sans-serif;
+// $sidebar-bg-color: rgba(20, 20, 20, .95);
+// $sidebar-text-color: #fff;
+// $sidebar-links-color: #fff;
+
+// example config for light mode:
+//
+// $trigger-position: bottom;
+// $trigger-icon-color: #000;
+// $sidebar-font: 'Ubuntu', sans-serif;
+// $sidebar-bg-color: rgba(255, 255, 255, .95);
+// $sidebar-text-color: #000;
+// $sidebar-links-color: #000;
+
+@keyframes blinker {
+  0% { opacity: 1; }
+  50% { opacity: .8; }
+  100% { opacity: 1; }
+}
+
+.info {
+  box-sizing: border-box;
+  font-family: $sidebar-font;
+  font-size: 12px;
+  line-height: 1.75;
+  text-align: right;
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: subpixel-antialiased;
+    margin: 0;
+    padding: 0;
+    text-rendering: optimizeLegibility;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .004);
+  }
+
+  button {
+    animation-duration: .25s;
+    animation-iteration-count: infinite;
+    animation-name: blinker;
+    animation-timing-function: cubic-bezier(.390, .575, .565, 1);  // easeOutSine
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    display: block;
+    height: 25px;
+    position: fixed;
+    right: 10px;
+    transition: opacity .15s ease-out;
+    width: 25px;
+    z-index: 1500;
+
+    @if $trigger-position == top {
+      top: 10px;
+    } @else if $trigger-position == bottom {
+      bottom: 10px;
+    }
+
+    svg {
+      display: block;
+      fill: $trigger-icon-color;
+      max-height: 100%;
+      max-width: 100%;
+    }
+
+    &:hover {
+      animation-name: none;
+    }
+
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  .sidebar {
+    background-color: $sidebar-bg-color;
+    color: $sidebar-text-color;
+    cursor: e-resize;
+    height: 100%;
+    padding: 20px;
+    position: fixed;
+    right: -320px;
+    top: 0;
+    transition: right .15s ease-in-out;
+    width: 320px;
+    z-index: 2000;
+
+    a,
+    a:link,
+    a:visited {
+      color: $sidebar-links-color;
+    }
+  }
+
+  p {
+    margin: 20px 0;
+  }
+
+  footer {
+    bottom: 0;
+    padding: 20px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    width: 100%;
+
+    a {
+      display: inline-block;
+      margin: 0 2px;
+      opacity: .5;
+      text-decoration: none;
+      transform: translateY(200%);
+
+      @for $i from 1 through 6 {
+        &:nth-child(#{$i}) {
+          $delay: (.2s + (.065 * $i));
+          transition: opacity .15s ease-out, transform .15s cubic-bezier(.215, .610, .355, 1) $delay;
+        }
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  &.opened {
+    button {
+      display: none;
+    }
+
+    .sidebar {
+      right: 0;
+    }
+
+    footer {
+      a {
+        transform: translateY(0%);
+      }
+    }
+  }
+
+  &.hidden {
+    display: none;
+
+    * {
+      display: none;
+    }
+  }
+}

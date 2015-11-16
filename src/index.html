@@ -1,0 +1,97 @@
+<!doctype html>
+<html class="no-js show-fallback" lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <meta property="og:type"        content="website" />
+    <meta property="og:url"         content="" />
+    <meta property="og:title"       content="" />
+    <meta property="og:image"       content="" />
+    <meta property="og:description" content="" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="">
+
+    <title>three.js scene</title>
+
+    <link rel="stylesheet" href="css/app.css" charset="utf-8">
+</head>
+<body>
+
+    <!-- information -->
+    <div class="info">
+      <button class="trigger">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="611.999px" height="612px" viewBox="0 0 611.999 612" xml:space="preserve">
+          <g>
+            <path d="M598.801,224.984H13.199c-5.137,0-9.804-2.978-11.969-7.635c-2.165-4.656-1.431-10.147,1.88-14.07L143.552,36.713 c2.508-2.978,6.199-4.694,10.09-4.694h304.722c3.892,0,7.588,1.716,10.09,4.694l140.437,166.566 c3.311,3.928,4.044,9.414,1.874,14.07C608.605,222.007,603.933,224.984,598.801,224.984z M41.594,198.585h528.812L452.229,58.418 H159.776L41.594,198.585z" />
+            <polygon points="306,579.98 3.104,220.29 23.294,203.285 306,539 588.705,203.285 608.896,220.29" />
+            <path d="M306,572.689c-5.602,0-10.586-3.531-12.444-8.812L170.959,216.178c-1.452-4.124-0.776-8.696,1.816-12.217L295.371,37.395 c2.487-3.38,6.432-5.376,10.629-5.376c4.197,0,8.142,1.996,10.634,5.375L439.23,203.96c2.588,3.521,3.269,8.094,1.815,12.217 L318.449,563.876C316.586,569.158,311.597,572.689,306,572.689z M198.176,213.987L306,519.796l107.823-305.811L306,67.489 L198.176,213.987z" />
+          </g>
+        </svg>
+      </button>
+      <section class="sidebar">
+        <h1>twist</h1>
+        <p>a custom three.js vertex shader that twists vertices around a central axis. combined with the build-in three.js mesh-lambert-material to retain some of the pre-programmed shader functionality like lighting & environment mapping.</p>
+        <p>a second paragraph with some extra secondary info or a reference to an <a href="http://google.com/" target="_blank">external link</a> or maybe the <a href="view-source:http://localhost:8080/" target="_blank">source</a> of the file</p>
+        <p>refresh the page to load a random color scheme</p>
+        <p>
+          <a href="http://integrated.com" target="_blank">source code</a><br>
+          more on <a href="https://polyclick.io/">polyclick.io</a>
+        </p>
+        <footer>
+          <a href="https://twitter.com/polyclickio" target="_blank">twitter</a>
+          <a href="https://github.com/polyclick" target="_blank">github</a>
+          <a href="https://www.instagram.com/polyclick/" target="_blank">instagram</a>
+          <a href="https://vine.co/polyclick" target="_blank">vine</a>
+          <a href="https://www.tumblr.com/blog/polyclick" target="_blank">tumblr</a>
+          <a href="https://vimeo.com/polyclick" target="_blank">vimeo</a>
+        </footer>
+      </section>
+    </div>
+
+    <!-- fallback -->
+    <div class="fallback">
+      <div class="wrapper">
+        <div class="content">
+          <div class="message icon">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="52.963px" height="52.963px" viewBox="0 0 52.963 52.963" xml:space="preserve">
+              <path d="M52.962,28.833l-10.788-5.752V10.572l-0.054,0.031l0.056-0.036L31.111,4.668l-10.018,5.645L10.507,4.668L0,10.588 l0.046,0.027v12.633L0,23.27l0.046,0.027v0.235v12.682L10.8,42.7v0.011l0.007-0.005l0.01,0.005v-0.009l10.754-6.486V24.087 l9.833,5.933v0.01l0.008-0.004l0.01,0.004v-0.01l0.016-0.011v11.788l10.754,6.486v0.011l0.008-0.005l0.01,0.005v-0.011 l10.754-6.486V28.836l-0.054,0.031L52.962,28.833z M20.65,22.482l-9.497-4.117l-0.002-1.043l9.499-5.705V22.482z M16.611,25.462 l-5.438,3.151l-0.018-9.159l8.965,3.888L16.611,25.462z M11.017,5.882l9.199,4.72l-9.199,5.559V5.882z M10.017,5.907v10.11 l-8.68-5.23L10.017,5.907z M0.872,11.562l9.119,5.499v1.266L0.872,22.52V11.562z M1.951,23.125l8.04-3.697v9.142L1.44,23.412 L1.951,23.125z M9.991,41.25l-8.6-5.187l8.6-3.955V41.25z M9.991,31.007l-9.119,4.194V24.244l9.119,5.499V31.007z M11.172,41.295 l-0.018-9.158l9.051,3.924L11.172,41.295z M20.744,35.206l-9.591-4.158l-0.002-1.043l9.593-5.761V35.206z M30.595,28.567 l-8.6-5.186l8.6-3.955V28.567z M30.595,18.326l-9.025,4.15V11.619l9.025,5.442V18.326z M30.622,16.018l-8.68-5.23l8.68-4.88V16.018 z M31.759,19.456l9.052,3.925l-9.033,5.233L31.759,19.456z M41.348,22.523l-9.591-4.158l-0.002-1.043l9.593-5.761V22.523z M31.622,5.882l9.198,4.72l-9.198,5.559V5.882z M41.381,46.833l-8.6-5.186l8.6-3.955V46.833z M41.381,36.59l-9.119,4.193V29.827 l9.119,5.498V36.59z M41.408,34.282l-8.531-5.141l4.221-2.545l4.312-2.425L41.408,34.282L41.408,34.282z M42.408,24.147l9.199,4.72 l-9.199,5.559V24.147z M42.562,46.878l-0.018-9.159l9.051,3.926L42.562,46.878z M52.134,40.789l-9.591-4.158l-0.002-1.043 l9.593-5.761V40.789z" />
+            </svg>
+            <div class="content">
+              <div class="title">Technology unsupported</div>
+              <p>
+                We're sorry but your web browser doesn't support WebGL. <br/>
+                You might want to try to update your current browser or get a totally new, fresh &amp; up to date <a href="http://browsehappy.com" target="_blank">alternative browser</a>.<br/>
+              </p>
+            </div>
+          </div>
+          <div class="message">
+            <p><b>In the meantime, here's an alternative version:</b></p>
+          </div>
+          <div class="video">
+            <iframe src="https://player.vimeo.com/video/131418877?color=00aeef&title=0&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- google analytics -->
+    <!-- todo: enter tracking identifier -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'XX-XXXXXXXX-X', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+    <!-- contributing to the webgl stats tracker -->
+    <script src="//cdn.webglstats.com/stat.js" defer="defer" async="async"></script>
+
+    <!-- source code -->
+    <script src="lib/system.js"></script>
+    <script src="config.js"></script>
+    <script>System.import('./js/app')</script>
+</body>
+</html>
